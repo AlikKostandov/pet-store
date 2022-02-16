@@ -1,0 +1,18 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=pet_store
+    username: postgres
+    password: hater
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+        hibernate.format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 51200KB
+      max-request-size: 51200KB
+
+

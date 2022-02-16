@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PeTTown</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/pets_styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="position">
+            <div class="header_name"><p><span class="weight">PeT</span>Town</p></div>
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a th:href="@{'/home'}">HOME</a>
+                    <a th:href="@{'/about'}">ABOUT</a>
+                    <a th:href="@{'/contact'}">CONTACT</a>
+                    <a th:href="@{'/pets'}">PETS</a>
+                    <a th:href="@{'/help'}">HELP</a>
+                    
+                </div>
+            </nav>
+            </div>
+        </header>
+        <main>
+            <div th:replace="~{navigation :: navigation(Pets)}"/>
+            <div class="container content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="list-group">
+                            <a href="/pets" class="list-group-item category">All</a>
+                            <a href="/pets?typePart=Dog" class="list-group-item category">Dogs</a>
+                            <a href="/pets?typePart=Cat" class="list-group-item category">Cats</a>
+                            <a href="/pets?typePart=Bird" class="list-group-item category">Birds</a>
+                            <a href="/pets?typePart=Rodent" class="list-group-item category">Rodents</a>
+                            <a href="/pets?typePart=Fish" class="list-group-item category">Pisces</a>
+                            <a href="/pets?typePart=Other" class="list-group-item category">Other</a>
+                        </div>
+                    </div>
+                <div class="col-md-8 products">
+                    <div class="row">
+                            <div th:each="pet: ${pets}" class="col-sm-4">
+
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <a th:href="@{'/pet/' + ${pet.id}}"><img th:src="@{'data:image/jpeg;base64,'+ ${pet.image}}" alt="gjh" ></a>
+                                        </div>
+                                        <p th:text="${pet.name}" class="product-title">
+                                            <a href="#"></a>
+                                        </p>
+                                        <p  th:text="${pet.description}" class="product-desc"></p>
+                                        <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="foot">
+                <div class="address"><p class="weight add"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>Moscow, Gorokhovsky allyway 566</p></div>
+                <div class="logo"><p><span class="weight">PeT</span>Town</p></div>
+                <div class="tel"><p class="tel_font"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.925 1.745a.636.636 0 0 0-.951-.059l-.97.97c-.453.453-.62 1.095-.421 1.658A16.47 16.47 0 0 0 5.49 10.51a16.471 16.471 0 0 0 6.196 3.907c.563.198 1.205.032 1.658-.421l.97-.97a.636.636 0 0 0-.06-.951l-2.162-1.682a.636.636 0 0 0-.544-.115l-2.052.513a1.636 1.636 0 0 1-1.554-.43L5.64 8.058a1.636 1.636 0 0 1-.43-1.554l.513-2.052a.636.636 0 0 0-.115-.544L3.925 1.745zM2.267.98a1.636 1.636 0 0 1 2.448.153l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+                </svg>8 (800) 000-00-00</p>
+                    <p class="p">Daily from 08:00 to 21:00</p></div>
+            </div>
+        </footer>
+    </body>
+</html>
