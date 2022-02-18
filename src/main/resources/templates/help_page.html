@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PeTTown</title>
+        <link rel="stylesheet" href="/help_form_styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="position">
+            <div class="header_name"><p><span class="weight">PeT</span>Town</p></div>
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a th:href="@{'/home'}">HOME</a>
+                    <a th:href="@{'/about'}">ABOUT</a>
+                    <a th:href="@{'/contact'}">CONTACT</a>
+                    <a th:href="@{'/pets'}">PETS</a>
+                    <a th:href="@{'/help'}">HELP</a>
+                    
+                </div>
+            </nav>   
+            </div>
+        </header>
+        <main>
+            <form th:action="@{'/lost_pet/add'}" method="post">
+                <div class="form-group">
+                    <label for="username">Your name: </label><br>
+                    <input type="text" name="username" id="username" class="is">
+                </div>
+                <div class="form-group">
+                    <label for="mail">Your email: </label><br>
+                    <input type="email" name="email" id="mail" class="is">
+                </div>
+                <div class="line">
+                    <div class="form-group">
+                        <label for="telephone">Your phone number: </label><br>
+                        <input type="tel" name="telephone" id="telephone" class="is" placeholder="+7 (900)-000-00-00">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Your additional phone number: </label><br>
+                        <input type="tel" name="telephone" id="telephoneAdd" class="is" placeholder="+7 (900)-000-00-00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="petname">Pet's name: </label><br>
+                    <input type="text" name="petname" id="petname" class="is">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="ty">Type: </label>
+                    <select name="type" id="ty" required class="my_option" aria-label=".form-select-sm example" width="100px">
+                        <option selected disabled value=" ">Choose</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Rodent">Rodent</option>
+                        <option value="Bird">Bird</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group"><br>
+                <label for="desc">Description: </label>
+                <br>
+                  <textarea id="desc" type="text" name="description" required class="is" rows="4"></textarea><br>
+                </div>
+                <div class="custom-file mb-2">
+                <input type="file" name="image"  id="customFile" required>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Give a pet">
+            </form> 
+        </main>
+        <footer>
+            <div class="foot">
+                <div class="address"><p class="weight add"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>Moscow, Gorokhovsky allyway 566</p></div>
+                <div class="logo"><p><span class="weight">PeT</span>Town</p></div>
+                <div class="tel"><p class="tel_font"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.925 1.745a.636.636 0 0 0-.951-.059l-.97.97c-.453.453-.62 1.095-.421 1.658A16.47 16.47 0 0 0 5.49 10.51a16.471 16.471 0 0 0 6.196 3.907c.563.198 1.205.032 1.658-.421l.97-.97a.636.636 0 0 0-.06-.951l-2.162-1.682a.636.636 0 0 0-.544-.115l-2.052.513a1.636 1.636 0 0 1-1.554-.43L5.64 8.058a1.636 1.636 0 0 1-.43-1.554l.513-2.052a.636.636 0 0 0-.115-.544L3.925 1.745zM2.267.98a1.636 1.636 0 0 1 2.448.153l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+</svg>8 (800) 000-00-00</p>
+                <p class="p">Daily from 08:00 to 21:00</p></div>
+            </div>
+        </footer>
+    </body>
+</html>

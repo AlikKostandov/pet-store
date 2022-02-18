@@ -66,4 +66,9 @@ public class PetController {
         petService.saveOrUpdate(type, gender, name, age, description, image);
         return "redirect:/pets";
     }
+
+    @GetMapping("/help")
+    public String showLostPets(){
+        return "help_page";
+    }
 }

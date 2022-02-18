@@ -1,0 +1,198 @@
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+li{
+    list-style: none;
+}
+
+header{
+    width:100%;
+    background:#000;
+    
+}
+.header_name {
+    text-transform: uppercase;
+    color:#fff;
+    font-weight: 800;
+    font-size: 48px;
+    cursor: pointer;
+    margin-left: 5%;
+}
+.header_name_main {
+    text-transform: uppercase;
+    color:#731180;
+    font-weight: 800;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+nav{
+    padding-right: 5%;
+}
+
+.topnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.topnav a{
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 24px;
+}
+
+.topnav a:hover{
+    text-decoration: none;
+    color: #731180;
+    border-bottom:3px solid #731180;
+}
+
+.weight{
+    color:#731180;
+}
+
+.position{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: black;
+}
+
+.address{
+    padding-top: 35px;
+}
+
+.add{
+    font-size: 14px;
+}
+
+.logo{
+    text-transform: uppercase;
+    color:#fff;
+    font-weight: 800;
+    font-size: 48px;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.tel{
+    padding-top: 20px;
+}
+
+.tel_font{
+    color: white;
+    font-size: 24px;
+}
+
+.tel_font svg{
+    color: #731180;
+}
+
+.p{
+    color: white;
+}
+
+.is,
+textarea{
+    background-color: white;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:15px;
+    margin-top:15px;
+    border:1px solid #731180;
+    padding-left:23px;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.is:focus,
+textarea:focus{
+    border:none;
+    background-color:white;
+}
+
+label{
+    font-size:16px;
+    font-weight: bold;
+    color:black;
+}
+
+input[id="username"],
+input[id="mail"],
+textarea{
+    width:630px;;
+}
+
+
+input[id="telephone"]{
+    width: 255px;
+    margin-right: 120px;
+}
+
+input[id="telephoneAdd"]{
+    width: 255px;
+    margin-right: 120px;
+}
+
+input[id="petname"]{
+    width: 375px;
+}
+
+
+textarea{
+    height:122px;
+}
+
+.form-select{
+    width: 200px;
+}
+
+.my_option{
+    display: inline-block;
+    width: 200px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2;
+    color: black;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #731180;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+main{
+    width: 76%;
+    margin-left: auto;
+    padding: 100px 0;
+}
+
+input{
+    height: 40px;
+}
+
+.line{
+    display: flex;
+}

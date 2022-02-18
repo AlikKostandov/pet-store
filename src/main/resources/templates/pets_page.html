@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
         <meta charset="UTF-8">
@@ -47,7 +47,7 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <a th:href="@{'/pet/' + ${pet.id}}"><img th:src="@{'data:image/jpeg;base64,'+ ${pet.image}}" alt="gjh" ></a>
+                                            <a th:href="@{'/pet/' + ${pet.id}}"><img th:src="@{'data:image/jpeg;base64,'+ ${pet.image}}" alt="gjh"></a>
                                         </div>
                                         <p th:text="${pet.name}" class="product-title">
                                             <a href="#"></a>
