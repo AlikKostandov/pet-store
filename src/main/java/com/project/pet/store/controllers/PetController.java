@@ -71,4 +71,9 @@ public class PetController {
     public String showLostPets(){
         return "help_page";
     }
+
+    @GetMapping("/about")
+    public String showAboutUs(){
+        return "about_page";
+    }
 }

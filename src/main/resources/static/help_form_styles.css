@@ -41,6 +41,7 @@ nav{
     margin-top: 15px;
 }
 .topnav a{
+    text-decoration: none;
     color: white;
     text-align: center;
     padding: 12px;
@@ -51,6 +52,11 @@ nav{
     text-decoration: none;
     color: #731180;
     border-bottom:3px solid #731180;
+}
+
+a{
+    text-decoration: none;
+    background-color: transparent;
 }
 
 .weight{
