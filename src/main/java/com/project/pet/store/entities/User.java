@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -30,5 +31,13 @@ public class User {
 
     @Column(name = "question")
     private String question;
+
+    @OneToMany(
+            mappedBy = "users",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<Pet> pets;
+
 
 }
