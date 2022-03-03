@@ -32,12 +32,12 @@ public class User {
     @Column(name = "question")
     private String question;
 
-    @OneToMany(
-            mappedBy = "users",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private Set<Pet> pets;
+//    @OneToMany(
+//            mappedBy = "users",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
+//    private Set<Pet> pets;
 
 
 }

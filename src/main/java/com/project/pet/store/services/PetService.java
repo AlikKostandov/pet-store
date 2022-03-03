@@ -1,6 +1,7 @@
 package com.project.pet.store.services;
 
 import com.project.pet.store.entities.Pet;
+import com.project.pet.store.exceptions.ResourceNotFoundException;
 import com.project.pet.store.repositories.PetRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,11 @@ public class PetService {
 
     public void removeById(Long id){
         petRepository.deleteById(id);
+    }
+
+    public Pet findById(Long id){
+        Pet pet = petRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Pet not found!"));
+        return pet;
     }
 
 

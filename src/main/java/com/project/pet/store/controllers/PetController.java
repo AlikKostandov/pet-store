@@ -24,16 +24,15 @@ public class PetController {
 
 
     @GetMapping("/home")
-    public String showHome(){
+    public String showHome() {
         return "home_page";
     }
 
 
     @GetMapping("/pets")
     public String showAllPets(Model model,
-                           @RequestParam(name = "p", defaultValue = "1") Integer pageIndex,
-                           @RequestParam Map<String, String> params)
-    {
+                              @RequestParam(name = "p", defaultValue = "1") Integer pageIndex,
+                              @RequestParam Map<String, String> params) {
         PetFilter petFilter = new PetFilter(params);
         Page<Pet> page = petService.findAll(petFilter.getSpec(), pageIndex - 1, 9);
         model.addAttribute("pets", page.getContent());
@@ -41,13 +40,13 @@ public class PetController {
     }
 
     @GetMapping("/pet")
-    public String showGivePage(){
+    public String showGivePage() {
         return "add_page";
     }
 
 
     @GetMapping("pet/remove/{id}")
-    public String removePet(@PathVariable Long id){
+    public String removePet(@PathVariable Long id) {
         petService.removeById(id);
         return "redirect:/pets";
     }
@@ -56,24 +55,30 @@ public class PetController {
 
     @PostMapping("pet/add")
     public String savePet(
-                           @RequestParam("type") String type,
-                           @RequestParam("gender") String gender,
-                           @RequestParam("name") String name,
-                           @RequestParam("age") int age,
-                           @RequestParam("description") String description,
-                           @RequestParam("image") MultipartFile image)throws IOException {
+            @RequestParam("type") String type,
+            @RequestParam("gender") String gender,
+            @RequestParam("name") String name,
+            @RequestParam("age") int age,
+            @RequestParam("description") String description,
+            @RequestParam("image") MultipartFile image) throws IOException {
 
         petService.saveOrUpdate(type, gender, name, age, description, image);
         return "redirect:/pets";
     }
 
     @GetMapping("/help")
-    public String showLostPets(){
+    public String showLostPets() {
         return "help_page";
     }
 
     @GetMapping("/about")
-    public String showAboutUs(){
+    public String showAboutUs() {
         return "about_page";
+    }
+
+    @GetMapping("pet/{id}")
+    public String showPet(@PathVariable Long id, Model model) {
+        model.addAttribute("pet", petService.findById(id));
+        return "pet_page";
     }
 }

@@ -50,7 +50,7 @@
                                             <a th:href="@{'/pet/' + ${pet.id}}"><img th:src="@{'data:image/jpeg;base64,'+ ${pet.image}}" alt="gjh"></a>
                                         </div>
                                         <p th:text="${pet.name}" class="product-title">
-                                            <a href="#"></a>
+                                            <a th:href="@{'/pet/' + ${pet.id}}"></a>
                                         </p>
                                         <p  th:text="${pet.description}" class="product-desc"></p>
                                         <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>

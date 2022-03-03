@@ -39,9 +39,9 @@ public class Pet {
     @Column(name = "image", columnDefinition = "MEDIUMBLOB")
     private String image;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinTable(name = "users_pets",
-            joinColumns = @JoinColumn(name = "user_email"),
-            inverseJoinColumns = @JoinColumn(name = "pet_name"))
-    private User owner;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinTable(name = "users_pets",
+//            joinColumns = @JoinColumn(name = "user_email"),
+//            inverseJoinColumns = @JoinColumn(name = "pet_name"))
+//    private User owner;
 }
