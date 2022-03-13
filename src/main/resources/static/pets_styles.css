@@ -31,6 +31,10 @@ header{
     cursor: pointer;
 }
 
+main{
+    padding-bottom: 700px;
+}
+
 nav{
     padding-right: 5%;
 }
