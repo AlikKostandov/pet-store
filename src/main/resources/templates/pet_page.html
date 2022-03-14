@@ -74,7 +74,7 @@
                     <div>
                         <h1>Description: </h1>
                         <div class="word-break">
-                            <p th:text="${pet.description}" class="pet_description">asdfghjkl;;loiuytrdesdxcvbnmkloiuytredfcvbnmkloiuytrjhgfadwdawdsfefsfdefsafawfawrtyhjnbvcftyujmnhbgtyuikmadwsfegdhfgdfsadfrgthyjukihgfdsadfghjkhgfdxz\asdfghjawdfsedgfrhtgjyhuyhtgfrdsedfgfhgjyhukjhjhygfdsadfgthyujihgfdsadfrgthyjgfds</p></div>
+                            <p th:text="${pet.description}" class="pet_description"></p></div>
                     </div>
                     <div>
                         <a class="btn btn-outline"  th:href= "@{'remove/' + ${pet.id}}"><p class="bt-color">Pick up</p></a>
@@ -84,57 +84,21 @@
             <div class="container content">
                 <div class="col-md-12 products">
                     <div class="row">
-                             <div class="col-sm-3">
+                        <div th:each="p: ${other_pets}" class="col-sm-3">
                                 <div class="product">
                                     <div class="product-img">
-                                        <a href="/pet/" + ${pet.id}><img src="/image/Lady.jpg" alt="" height="200px" width="200px"></a>
+                                        <a th:href="@{'/pet/' + ${p.id}}"><img th:src="@{'data:image/jpeg;base64,'+ ${p.image}}" alt="" height="200px" width="200px"></a>
                                     </div>
-                                    <p th:text="${pet.type}" class="product-title">
+                                    <p th:text="${p.type}" class="product-title">
                                         <a href="#">Lady</a>
                                     </p>
-                                    <p  th:text="${pet.name}" class="product-desc">Description: Cocker Spaniel, you know a lot of teams, very smart, but sometimes aggressive, despite the fact that faithful</p>
+                                    <p  th:text="${p.name}" class="product-desc"></p>
                                     <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>
                                 </div>
-                            </div>    
-                        <div class="col-sm-3">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <a th:href="@{'/pet/' + ${pet.id}}"><img src="image/Lady%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" alt="" height="200px" width="200px"></a>
-                                    </div>
-                                    <p th:text="${pet.type}" class="product-title">
-                                        <a href="#">Lady</a>
-                                    </p>
-                                    <p  th:text="${pet.name}" class="product-desc">Description: Cocker Spaniel, you know a lot of teams, very smart, but sometimes aggressive, despite the fact that faithful</p>
-                                    <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>
-                                </div>
-                            </div>
-                        <div class="col-sm-3">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <a href="/pet/" + ${pet.id}><img src="image/Lady%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" alt="" height="200px" width="200px"></a>
-                                    </div>
-                                    <p th:text="${pet.type}" class="product-title">
-                                        <a href="#">Lady</a>
-                                    </p>
-                                    <p  th:text="${pet.name}" class="product-desc">Description: Cocker Spaniel, you know a lot of teams, very smart, but sometimes aggressive, despite the fact that faithful</p>
-                                    <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>
-                                </div>
-                            </div>
-                        <div class="col-sm-3">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <a href="/pet/" + ${pet.id}><img src="image/Lady%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.jpg" alt="" height="200px" width="200px"></a>
-                                    </div>
-                                    <p th:text="${pet.type}" class="product-title">
-                                        <a href="#">Lady</a>
-                                    </p>
-                                    <p  th:text="${pet.name}" class="product-desc">Description: Cocker Spaniel, you know a lot of teams, very smart, but sometimes aggressive, despite the fact that faithful</p>
-                                    <a class="btn btn-outline"><p class="bt-color">More detailed</p></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </main>
         <footer>
             <div class="foot">

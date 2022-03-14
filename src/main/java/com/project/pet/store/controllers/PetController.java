@@ -77,8 +77,12 @@ public class PetController {
     }
 
     @GetMapping("pet/{id}")
-    public String showPet(@PathVariable Long id, Model model) {
+    public String showPet(@PathVariable Long id, Model model, @RequestParam(name = "p", defaultValue = "1") Integer pageIndex,
+                          @RequestParam Map<String, String> params) {
+        PetFilter petFilter = new PetFilter(params);
+        Page<Pet> page = petService.findAll(petFilter.getSpec(), pageIndex - 1, 3);
         model.addAttribute("pet", petService.findById(id));
+        model.addAttribute("other_pets",  page.getContent());
         return "pet_page";
     }
 }

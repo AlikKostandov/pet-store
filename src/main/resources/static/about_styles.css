@@ -71,6 +71,12 @@ main .main_about{
     display:flex;
     padding:100px 0 100px 0;
 }
+
+.about_left img{
+    width: 375px;
+
+}
+
 .about_right{
     margin-left:175px; 
 }
@@ -82,6 +88,7 @@ main .main_about{
 .about_right p{
     margin:30px 0 50px 0;
     color:#6c6c6c;
+    font-size: 24px;
 }
 li{
     background: url(image/.png) 0px no-repeat;
@@ -144,28 +151,28 @@ li{
     font-size:24px;
 }
 .picture {
-    width: 115px;
-    height: 115px;
+    width: 150px;
+    height: 150px;
     border:7px solid #731180;
     border-radius:50%;
     margin:20px auto;
 }
 .card1 .picture img{
-    width:60px;
-    margin-top:30px;
+    width:104px;
+    margin-top:22px;
 }
 .card2 .picture img{
-    margin-top:23px;
-    width:45px;
+    margin-top:21px;
+    width:86px;
 }
 .card3 .picture img{
-    width:70px;
-    margin-top:25px;
+    width:96px;
+    margin-top:20px;
     
 }
 .card4 .picture img{
-    width:60px;
-    margin-top:20px;
+    width:87px;
+    margin-top:21px;
 }
 .service_cards{
     display:flex;
