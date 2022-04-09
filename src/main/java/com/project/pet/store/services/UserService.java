@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     UserRepository userRepository;
 
-    public User saveOrUpdate(User user){
-        return userRepository.save(user);
+    public void saveOrUpdate(User user){
+        userRepository.save(user);
     }
 }

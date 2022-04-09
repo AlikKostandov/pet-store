@@ -4,19 +4,15 @@ import com.project.pet.store.entities.Pet;
 import com.project.pet.store.exceptions.ResourceNotFoundException;
 import com.project.pet.store.repositories.PetRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Base64;
-import java.util.List;
-import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -27,12 +23,7 @@ public class PetService {
         return petRepository.findAll(spec, PageRequest.of(page, size));
     }
 
-    public Pet getPet(@PathVariable Long id){
-        return petRepository.findById(id).orElseThrow();
-    }
 
-
-//    MultipartFile file,
     public void saveOrUpdate(String type, String gender, String name, int age, String description, MultipartFile image) throws IOException {
         String fileName = StringUtils.cleanPath(image.getOriginalFilename());
         Pet pet = new Pet();
@@ -58,8 +49,7 @@ public class PetService {
     }
 
     public Pet findById(Long id){
-        Pet pet = petRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Pet not found!"));
-        return pet;
+        return petRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Pet not found!"));
     }
 
 

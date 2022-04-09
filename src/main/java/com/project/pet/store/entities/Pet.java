@@ -4,7 +4,7 @@ package com.project.pet.store.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = "pets")
@@ -36,12 +36,10 @@ public class Pet {
     private String description;
 
     @Lob
-    @Column(name = "image", columnDefinition = "MEDIUMBLOB")
+    @Column(name = "image")
     private String image;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinTable(name = "users_pets",
-//            joinColumns = @JoinColumn(name = "user_email"),
-//            inverseJoinColumns = @JoinColumn(name = "pet_name"))
-//    private User owner;
+    @ManyToOne
+    @JoinColumn(name = "userid")
+    private User owner;
 }

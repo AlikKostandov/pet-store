@@ -2,9 +2,7 @@ package com.project.pet.store.controllers;
 
 
 import com.project.pet.store.entities.Pet;
-import com.project.pet.store.entities.User;
 import com.project.pet.store.services.PetService;
-import com.project.pet.store.services.UserService;
 import com.project.pet.store.utils.PetFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 @Controller

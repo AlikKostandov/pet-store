@@ -17,7 +17,6 @@ import java.util.Set;
 @Builder
 public class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid")
@@ -32,12 +31,8 @@ public class User {
     @Column(name = "question")
     private String question;
 
-//    @OneToMany(
-//            mappedBy = "users",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private Set<Pet> pets;
+    @OneToMany(mappedBy = "owner")
+    private Set<Pet> pets;
 
 
 }
